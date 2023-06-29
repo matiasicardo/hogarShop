@@ -1,0 +1,17 @@
+header {
+    background-color: #fff159;
+    align-items: center;
+    justify-content: space-between;
+}
+
+h1{
+    color:#0f19a0;
+}
+
+li {
+    list-style: none;
+    margin-left: 1rem;
+    color: #555151;
+
+}
+
