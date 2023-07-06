@@ -1,30 +1,32 @@
 import { useState } from "react";
 
-const Contador = ({stock, inicial}) => {
+const Contador = ({ stock, inicial, funcionAgregar }) => {
     const [contador, setContador] = useState(inicial);
 
     const aumentarContador = () => {
-        if(contador < stock) {
+        if (contador < stock) {
             setContador(contador + 1);
         }
     }
 
     const disminuirContador = () => {
-        if(contador > inicial) {
+        if (contador > inicial) {
             setContador(contador - 1);
         }
     }
 
-  return (
-    <div>
-        <h2>Contador</h2>
-        <button onClick={ aumentarContador }> + </button>
-        <strong> {contador} </strong>
-        <button onClick={ disminuirContador }> - </button>
+    return (
+        <div className="container text-center">
+            <div className="row">
+                <p className="card-text"> Stock:  {stock} </p>
+                <button onClick={aumentarContador}> + </button>
+                <strong> {contador} </strong>
+                <button onClick={disminuirContador}> - </button>
 
-        <button> Agregar al carrito </button>
-    </div>
-  )
+                <button onClick={() => funcionAgregar(contador)} className="btn btn-outline-primary" type="button" > Agregar al carrito </button>
+            </div>
+        </div>
+    )
 }
 
 export default Contador

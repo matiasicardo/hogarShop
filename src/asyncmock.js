@@ -6,7 +6,8 @@ const misProductos = [
         precio:500,
         img:"../src/imagenes/E2020.png",
         desc:"Fijo hasta 32"
-    },
+,        stock: "6"
+ ,   },
     {
         id:"2",
         nombre:"E4040",
@@ -14,14 +15,16 @@ const misProductos = [
         precio:800,
         img:"../src/imagenes/SOPORTE-TV-LCD-E4040-01.png",
         desc:"Fijo hasta 55"
-    },
+,        stock: "6"
+ ,   },
     {
         id:"3",
         nombre:"L2022",
         idCat:"2",
         precio:800,
         img:"../src/imagenes/L2022.png",
-        desc:"Fijo e inclinable hasta 32"
+        desc:"Fijo e inclinable hasta 32",
+        stock: "6",
     },
     {
         id:"4",
@@ -29,7 +32,8 @@ const misProductos = [
         idCat:"2",
         precio:1200,
         img:"../src/imagenes/SOPORTE-LED-LCD-L4044-010.png",
-        desc:"Fijo e inclinable hasta 55"
+        desc:"Fijo e inclinable hasta 55",
+        stock: "6",
     },
     {
         id:"5",
@@ -37,7 +41,8 @@ const misProductos = [
         idCat:"3",
         precio:2000,
         img:"../src/imagenes/L40.png", 
-        desc:"Movil hasta 32"
+        desc:"Movil hasta 32",
+        stock: "6",
     },
     {
         id:"6",
@@ -61,7 +66,8 @@ const misProductos = [
         idCat:"3",
         precio:3500,
         img:"../src/imagenes/L75.png",
-        desc:"Movil hasta 55"
+        desc:"Movil hasta 55",
+        stock: "6",
     },
     {
         id:"9",
@@ -69,7 +75,8 @@ const misProductos = [
         idCat:"3",
         precio:5000,
         img:"../src/imagenes/L85.png",
-        desc:"Movil hasta 65"
+        desc:"Movil hasta 65",
+        stock: "6",
     }
 ]
 
@@ -78,7 +85,7 @@ export const getProductos = () => {
     return new Promise((resolve) => {
       setTimeout(() => {
         resolve(misProductos)
-      }, 2000)
+      }, 200)
     })
 }
   
@@ -88,7 +95,7 @@ export const getUnProducto = (id) => {
       setTimeout(() => {
         const producto = misProductos.find((prod) => prod.id === id)
         resolve(producto)
-      }, 2000)
+      }, 200)
     })
 }
   
@@ -98,6 +105,6 @@ export const getCategoria = (idCategoria) => {
       setTimeout(() => {
         const producto = misProductos.filter((prod) => prod.idCat === idCategoria)
         resolve(producto)
-      }, 2000)
+      }, 200)
     })
 }
