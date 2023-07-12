@@ -1,13 +1,20 @@
 import { useState } from "react"
 import { Link } from "react-router-dom"
 import Contador from "../Contador/Contador"
+import { useContext } from "react"
+import { CarritoContext } from "../../context/CarritoContext"
 
 const ItemDetalles = ({ id, nombre, precio, img, desc, stock }) => {
     const [agregarCantidad, SetAgregarCantidad] = useState(0);
     
+    const {agregarProducto} = useContext(CarritoContext);
+
     const manejadorCantidad = (cantidad) => {
         SetAgregarCantidad(cantidad); 
-        console.log("Productos agregados: " + cantidad)
+        //console.log("Productos agregados: " + cantidad)
+
+        const item = { id, nombre, precio};
+        agregarProducto(item, cantidad);
     }
 
 
@@ -36,8 +43,5 @@ const ItemDetalles = ({ id, nombre, precio, img, desc, stock }) => {
         </>
     )
 }
-/*                    <div className="d-grid gap-3 col-10 mx-auto">
-                        <button className="btn btn-primary" type="button">Comprar ahora</button>
-                        <button className="btn btn-outline-primary" type="button">Agregar al carrito</button>
-                    </div>*/
+
 export default ItemDetalles
