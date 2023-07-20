@@ -3,6 +3,7 @@ import ItemDetallesCont from "./componentes/ItemDetallesCont/ItemDetallesCont"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import NavBar from "./componentes/NavBar/NavBar"
 import { CarritoProvider } from "./context/CarritoContext"
+import Cart from "./componentes/Cart/Cart"
 
 
 const App = () => {
@@ -22,7 +23,7 @@ const App = () => {
               element={<ItemDetallesCont />} />
             <Route
               path="/cart"
-              element={<h2> Carrito </h2>} />
+              element={<Cart/>} />
           </Routes>
         </CarritoProvider>
       </BrowserRouter>
