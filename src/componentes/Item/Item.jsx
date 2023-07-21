@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 //Tarjetas
 
-const Item = ({ id, nombre, precio, img, desc }) => {
+const Item = ({ id, nombre, precio, img, desc, stock, idCat }) => {
     return (
         <div>
             <div className="card text-center bg-dark">
@@ -10,12 +10,12 @@ const Item = ({ id, nombre, precio, img, desc }) => {
                     <h3 className="card-title"> {nombre}</h3>
                     <p className="card-text text-info"> Precio: $ {precio} </p>
                     <p className="card-text text-info">  {desc} </p>
+                    <p>{stock}</p>
+                    <p>Seccion : {idCat}</p>
                     <div>
                         <Link to={`/item/${id}`}>
                             <button className="btn btn-success mb-1"> Ver detalles</button>
                         </Link>
-                        <button className="btn btn-success"> Agregar al carrito</button>
-
                     </div>
                 </div>
             </div>
